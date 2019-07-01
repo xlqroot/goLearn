@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88cd03ee-c0e6-4c79-9fbe-a82e070b1b5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/session/sess.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/session/sess.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,17 +33,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/session/sess.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="151" column="18" lean-forward="true" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
+            <state relative-caret-position="390">
+              <caret line="236" column="11" selection-start-line="236" selection-start-column="11" selection-end-line="236" selection-end-column="11" />
               <folding>
-                <element signature="e#14#40#0" expanded="true" />
-                <element signature="n#!!block;n#newFromMemory#0" />
-                <element signature="n#!!block;n#InitSession#0" />
+                <element signature="e#110#239#0" />
+                <element signature="e#289#483#0" />
+                <element signature="n#!!block;n#Set#0" />
+                <element signature="n#!!block;n#Get#0" />
+                <element signature="n#!!block;n#Remove#0" />
+                <element signature="n#!!block;n#GetId#0" />
                 <element signature="n#!!block;n#DestroySession#0" />
-                <element signature="e#2121#2126#0" />
                 <element signature="n#!!block;n#GC#0" />
                 <element signature="n#!!block;n#randomId#0" />
+                <element signature="n#!!block;n#NewSessionManager#0" />
+                <element signature="n#!!block;n#SessionStart#0" />
+                <element signature="e#3979#3981#0" />
+                <element signature="e#4003#4223#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/go/src/net/http/request.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="391" column="41" lean-forward="true" selection-start-line="391" selection-start-column="41" selection-end-line="391" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/go/src/net/http/cookie.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -70,6 +93,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>randomId()</find>
+      <find>randomId</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="D:\Go" />
@@ -102,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,7 +160,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,7 +198,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -187,7 +211,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -280,13 +304,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/test/img/b.png" />
-    <entry file="file://D:/go/src/net/http/request.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="198" column="4" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/img/法人 (2).jpg" />
     <entry file="file://D:/go/src/time/time.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -324,13 +341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/post.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/main_ts.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -338,18 +348,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/post.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/go/src/net/http/cookie.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/go/src/net/http/request.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="391" column="41" lean-forward="true" selection-start-line="391" selection-start-column="41" selection-end-line="391" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/go/src/net/url/url.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="279" column="5" selection-start-line="279" selection-start-column="5" selection-end-line="279" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/session/sess.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="151" column="18" lean-forward="true" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
+        <state relative-caret-position="390">
+          <caret line="236" column="11" selection-start-line="236" selection-start-column="11" selection-end-line="236" selection-end-column="11" />
           <folding>
-            <element signature="e#14#40#0" expanded="true" />
-            <element signature="n#!!block;n#newFromMemory#0" />
-            <element signature="n#!!block;n#InitSession#0" />
+            <element signature="e#110#239#0" />
+            <element signature="e#289#483#0" />
+            <element signature="n#!!block;n#Set#0" />
+            <element signature="n#!!block;n#Get#0" />
+            <element signature="n#!!block;n#Remove#0" />
+            <element signature="n#!!block;n#GetId#0" />
             <element signature="n#!!block;n#DestroySession#0" />
-            <element signature="e#2121#2126#0" />
             <element signature="n#!!block;n#GC#0" />
             <element signature="n#!!block;n#randomId#0" />
+            <element signature="n#!!block;n#NewSessionManager#0" />
+            <element signature="n#!!block;n#SessionStart#0" />
+            <element signature="e#3979#3981#0" />
+            <element signature="e#4003#4223#0" />
           </folding>
         </state>
       </provider>

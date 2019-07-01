@@ -4,6 +4,8 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"io"
+	"net/http"
+	"net/url"
 	"sync"
 	"time"
 )
@@ -47,14 +49,13 @@ func (s SessionFromMemory) GetId() string {
 	return s.sid
 }
 
-//获取新的session
+//生成新的session个例
 func newSessionFromMemory() *SessionFromMemory {
 	return &SessionFromMemory{
 		data:   make(map[interface{}]interface{}),
         maxAge: 1800, //默认30分钟
 	}
 }
-
 
 
 //定义session存储的驱动的接口
@@ -151,7 +152,7 @@ func (m *SessionManager) GetSessionById(sid string) Session {
 	session := m.storage.(*FromMemory).sessions[sid]
 	return session
 }
-
+//生成新的session管理器
 func NewSessionManager() *SessionManager {
 	sessionManager := &SessionManager{
 		cookieName: "lzy-cookie",
@@ -163,7 +164,77 @@ func NewSessionManager() *SessionManager {
 	return sessionManager
 }
 
+//获取cookie名字  包外使用
+func (m *SessionManager) GetCookieName() string  {
+	return  m.cookieName
+}
 
+//开启session  类似于php session_start
+func (m *SessionManager) SessionStart (w http.ResponseWriter,r *http.Request) Session  {
+	//防止一个请求进入时  请求请求串行
+	m.lock.Lock()
+	defer m.lock.Unlock()
+
+	//获取约定的cookie名字
+	cookie,err := r.Cookie(m.cookieName)
+
+	var session Session
+
+	if err != nil || cookie.Value == "" {
+		//没有存到cookie 和 对应的session
+		sid := m.randomId();
+
+		session,_ := m.storage.InitSession(sid,m.maxAge)
+
+		maxAge := m.maxAge
+
+		if maxAge == 0 {
+			maxAge = session.(*SessionFromMemory).maxAge
+		}
+
+		newCookie := &http.Cookie{
+			Name: m.cookieName,
+			//这里是并发不安全的，但是这个方法已上锁
+			Value:    url.QueryEscape(sid), //转义特殊符号@#￥%+*-等
+			Path:     "/",
+			HttpOnly: true,
+			MaxAge:   int(maxAge),
+			Expires:  time.Now().Add(time.Duration(maxAge)),
+		}
+
+		http.SetCookie(w,newCookie)
+
+	}else{
+		//取到了cookie 进行进一步解析
+		sid := url.QueryEscape(cookie.Value)
+
+		session =  m.storage.(*FromMemory).sessions[sid];
+
+		if session == nil{
+			session,_ := m.storage.InitSession(sid,m.maxAge)
+
+			maxAge := m.maxAge
+
+			if maxAge == 0 {
+				maxAge = session.(*SessionFromMemory).maxAge
+			}
+
+			newCookie := &http.Cookie{
+				Name: m.cookieName,
+				//这里是并发不安全的，但是这个方法已上锁
+				Value:    url.QueryEscape(sid), //转义特殊符号@#￥%+*-等
+				Path:     "/",
+				HttpOnly: true,
+				MaxAge:   int(maxAge),
+				Expires:  time.Now().Add(time.Duration(maxAge)),
+			}
+			http.SetCookie(w,newCookie)
+		}
+	}
+	return session
+}
+
+//update 删除 没写
 
 
 //https://studygolang.com/articles/12856
